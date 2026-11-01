@@ -32,11 +32,11 @@ export default async function PracticeAreasPage() {
                   className="object-cover transition-transform duration-[1.4s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/0 to-transparent" />
-                <span className="absolute left-5 top-5 font-mono text-xs text-paper/80">{String(i + 1).padStart(2, "0")}</span>
+                <span className="absolute left-5 top-5 tabular-nums text-xs text-paper/80">{String(i + 1).padStart(2, "0")}</span>
                 <span className="absolute right-4 top-4 grid h-11 w-11 place-items-center rounded-full bg-paper text-ink transition-transform duration-500 group-hover:rotate-45">
                   <ArrowUpRight className="h-4 w-4" />
                 </span>
-                <h2 className="absolute inset-x-5 bottom-5 font-serif text-4xl leading-none text-paper">{a.title}</h2>
+                <h2 className="absolute inset-x-5 bottom-5 font-display text-4xl leading-none text-paper">{a.title}</h2>
               </div>
               <p className="mt-4 text-muted">{a.summary}</p>
             </Link>

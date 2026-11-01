@@ -94,11 +94,11 @@ export function Navbar({ menuImages }: { menuImages: string[] }) {
                 transition={{ duration: 0.35 }}
               >
                 <Link href="/" className="flex items-center gap-2.5 rounded-full pr-2" aria-label={s.brand.name}>
-                  <span className="grid h-10 w-10 place-items-center rounded-full bg-paper font-serif text-lg text-ink">
+                  <span className="grid h-10 w-10 place-items-center rounded-full bg-paper font-display text-lg text-ink">
                     {s.brand.shortName}
                   </span>
                   <motion.span
-                    className="overflow-hidden whitespace-nowrap font-serif text-lg"
+                    className="overflow-hidden whitespace-nowrap font-display text-lg"
                     animate={{ width: compact ? 0 : "auto", opacity: compact ? 0 : 1 }}
                     transition={{ duration: 0.5, ease: EASE }}
                   >
@@ -175,10 +175,10 @@ export function Navbar({ menuImages }: { menuImages: string[] }) {
               >
                 <div className="flex h-14 items-center justify-between pl-2 pr-2">
                   <Link href="/" className="flex items-center gap-2.5">
-                    <span className="grid h-10 w-10 place-items-center rounded-full bg-paper font-serif text-lg text-ink">
+                    <span className="grid h-10 w-10 place-items-center rounded-full bg-paper font-display text-lg text-ink">
                       {s.brand.shortName}
                     </span>
-                    <span className="font-serif text-lg">{s.brand.name}</span>
+                    <span className="font-display text-lg">{s.brand.name}</span>
                   </Link>
                   <MenuButton progress={progress} onClick={() => setOpen(false)} open />
                 </div>
@@ -198,9 +198,9 @@ export function Navbar({ menuImages }: { menuImages: string[] }) {
                           onMouseEnter={() => setPreview(idx)}
                           className="group flex items-baseline gap-4 py-3 md:py-3.5"
                         >
-                          <span className="font-mono text-xs text-paper/40">{String(idx + 1).padStart(2, "0")}</span>
+                          <span className="tabular-nums text-xs text-paper/40">{String(idx + 1).padStart(2, "0")}</span>
                           <span
-                            className={`font-serif text-[clamp(2rem,5.5vw,3.6rem)] leading-none tracking-tight transition-all duration-500 group-hover:translate-x-2 group-hover:italic ${
+                            className={`font-display text-[clamp(2rem,5.5vw,3.6rem)] leading-none tracking-tight transition-all duration-500 group-hover:translate-x-2 ${
                               pathname.startsWith(i.href) ? "text-accent" : ""
                             }`}
                           >

@@ -13,7 +13,7 @@ export function PostCard({ p }: { p: Post }) {
       <p className="mt-4 text-xs text-muted">
         {fmtDate(p.publishedAt)} · {p.readMinutes} min read · {p.author}
       </p>
-      <h3 className="mt-2 font-serif text-[1.75rem] leading-[1.08] tracking-tight transition-colors group-hover:text-accent">{p.title}</h3>
+      <h3 className="mt-2 font-display text-[1.75rem] leading-[1.08] tracking-tight transition-colors group-hover:text-accent">{p.title}</h3>
       <p className="mt-2 line-clamp-2 text-sm text-muted">{p.excerpt}</p>
     </Link>
   );

@@ -16,14 +16,14 @@ const MODES = [
 
 const STEPS = ["Matter", "Time", "Details", "Confirm"];
 
-export function BookingWizard({ attorney }: { attorney?: string }) {
-  const [step, setStep] = useState(0);
+export function BookingWizard({ attorney, area }: { attorney?: string; area?: string }) {
+  const [step, setStep] = useState(area && PRACTICE_CHOICES.includes(area) ? 1 : 0);
   const [dir, setDir] = useState(1);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [done, setDone] = useState(false);
   const [f, setF] = useState({
-    practiceArea: "",
+    practiceArea: area && PRACTICE_CHOICES.includes(area) ? area : "",
     date: "",
     time: "",
     mode: "video" as (typeof MODES)[number]["key"],
@@ -110,7 +110,7 @@ export function BookingWizard({ attorney }: { attorney?: string }) {
               <motion.div className="h-full bg-ink" animate={{ width: i <= step ? "100%" : "0%" }} transition={{ duration: 0.6, ease: EASE }} />
             </div>
             <span className={`mt-2 block text-xs ${i <= step ? "text-ink" : "text-muted"}`}>
-              <span className="font-mono">{String(i + 1).padStart(2, "0")}</span> <span className="hidden sm:inline">{label}</span>
+              <span className="tabular-nums">{String(i + 1).padStart(2, "0")}</span> <span className="hidden sm:inline">{label}</span>
             </span>
           </button>
         ))}
@@ -160,7 +160,7 @@ export function BookingWizard({ attorney }: { attorney?: string }) {
                       }`}
                     >
                       <span className="text-[11px] uppercase opacity-60">{d.toLocaleDateString("en-IN", { weekday: "short" })}</span>
-                      <span className="font-serif text-2xl leading-tight">{d.getDate()}</span>
+                      <span className="font-display text-2xl leading-tight">{d.getDate()}</span>
                       <span className="text-[11px] opacity-60">{d.toLocaleDateString("en-IN", { month: "short" })}</span>
                     </button>
                   ))}
@@ -170,7 +170,7 @@ export function BookingWizard({ attorney }: { attorney?: string }) {
                     <button
                       key={t}
                       onClick={() => setF({ ...f, time: t })}
-                      className={`rounded-full border px-4 py-2 font-mono text-sm transition-all ${
+                      className={`rounded-full border px-4 py-2 tabular-nums text-sm transition-all ${
                         f.time === t ? "border-accent bg-accent text-ink" : "hairline hover:border-ink/40"
                       }`}
                     >

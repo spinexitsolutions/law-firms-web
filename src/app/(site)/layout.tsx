@@ -26,9 +26,9 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
   ].filter(Boolean) as string[];
 
   const hex = (v: string, d: string) => (/^#[0-9a-fA-F]{3,8}$/.test(v) ? v : d);
-  const theme = `:root{--accent:${hex(s.theme.accent, "#B38B59")};--ink:${hex(s.theme.ink, "#0E0E0C")};--paper:${hex(
+  const theme = `:root{--accent:${hex(s.theme.accent, "#F2541B")};--ink:${hex(s.theme.ink, "#0C0C0E")};--paper:${hex(
     s.theme.paper,
-    "#F3F0EA",
+    "#F1EFEA",
   )};--radius:${Number(s.theme.radius) || 28}px}`;
   const introScript = s.intro.enabled && s.intro.oncePerSession
     ? `try{if(sessionStorage.getItem('av-intro-seen'))document.documentElement.classList.add('intro-seen')}catch(e){}`

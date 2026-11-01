@@ -88,6 +88,13 @@ export function Intro({ settings, onDone }: { settings: Settings; onDone: () => 
           transition={{ duration: 1, ease: EASE, delay: 0.25 }}
         />
       ) : (
+        <>
+        {/* accent layer peels away just after the ink layer */}
+        <motion.div
+          className="absolute inset-0 bg-accent"
+          animate={exiting ? { y: "-110%" } : { y: 0 }}
+          transition={{ duration: 1.15, ease: [0.76, 0, 0.24, 1], delay: 0.16 }}
+        />
         <motion.div
           className="absolute inset-0 bg-ink"
           style={{ borderBottomLeftRadius: "50% 0%", borderBottomRightRadius: "50% 0%" }}
@@ -98,6 +105,7 @@ export function Intro({ settings, onDone }: { settings: Settings; onDone: () => 
           }
           transition={{ duration: 1.15, ease: [0.76, 0, 0.24, 1] }}
         />
+        </>
       )}
 
       {/* content layer */}
@@ -130,7 +138,7 @@ export function Intro({ settings, onDone }: { settings: Settings; onDone: () => 
                 animate={{ pathLength: 1 }}
                 transition={{ duration: dur / 1000, ease: "easeInOut" }}
               />
-              <text x="60" y="73" textAnchor="middle" fill="currentColor" style={{ fontFamily: "var(--font-serif)", fontSize: 40 }}>
+              <text x="60" y="73" textAnchor="middle" fill="currentColor" style={{ fontFamily: "var(--font-display)", fontSize: 40 }}>
                 {brand.shortName}
               </text>
             </motion.svg>
@@ -142,11 +150,11 @@ export function Intro({ settings, onDone }: { settings: Settings; onDone: () => 
               transition={{ duration: dur / 1000, ease: "easeInOut" }}
             />
           )}
-          <div className="relative h-[1.1em] overflow-hidden text-center font-serif text-[clamp(3rem,12vw,9rem)] leading-none tracking-tight">
+          <div className="relative h-[1.1em] overflow-hidden text-center font-display text-[clamp(3rem,12vw,9rem)] font-medium leading-none tracking-[-0.06em]">
             <AnimatePresence mode="popLayout" initial={false}>
               <motion.span
                 key={wordIdx}
-                className="block italic"
+                className="block"
                 initial={{ y: "100%", opacity: 0 }}
                 animate={{ y: "0%", opacity: 1 }}
                 exit={{ y: "-100%", opacity: 0 }}
@@ -159,8 +167,8 @@ export function Intro({ settings, onDone }: { settings: Settings; onDone: () => 
         </div>
 
         <div className="flex items-end justify-between">
-          <span className="font-serif text-2xl md:text-4xl">{brand.name}</span>
-          <span className="font-mono text-5xl tabular-nums tracking-tighter md:text-7xl">
+          <span className="font-display text-2xl font-medium tracking-tight md:text-4xl">{brand.name}</span>
+          <span className="tabular-nums text-5xl tabular-nums tracking-tighter md:text-7xl">
             {String(count).padStart(3, "0")}
           </span>
         </div>

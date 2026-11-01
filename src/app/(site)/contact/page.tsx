@@ -51,7 +51,7 @@ export default async function ContactPage() {
         <div className="grid gap-6 md:grid-cols-3">
           {s.offices.map((o) => (
             <div key={o.city} className="rounded-2xl bg-paper-2 p-6">
-              <h3 className="font-serif text-3xl">{o.city}</h3>
+              <h3 className="font-display text-3xl">{o.city}</h3>
               <p className="mt-2 text-sm text-muted">{o.address}</p>
               <a href={`tel:${o.phone.replace(/\s/g, "")}`} className="mt-3 block text-sm">{o.phone}</a>
             </div>

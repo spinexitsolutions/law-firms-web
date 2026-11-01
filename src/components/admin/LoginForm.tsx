@@ -43,7 +43,7 @@ export function LoginForm() {
         className="relative w-full max-w-[400px]"
       >
         <div className="mb-8 text-center">
-          <div className="mx-auto mb-5 grid size-14 place-items-center rounded-2xl bg-[#1d1d1f] font-serif text-[26px] italic text-white shadow-xl">
+          <div className="mx-auto mb-5 grid size-14 place-items-center rounded-2xl bg-[#1d1d1f] font-display text-[26px] text-white shadow-xl">
             A
           </div>
           <h1 className="text-[28px] font-semibold tracking-[-0.02em]">Practice console</h1>
@@ -63,7 +63,7 @@ export function LoginForm() {
         </form>
         <div className="mt-5 flex items-center justify-center gap-2 rounded-2xl bg-black/[0.04] px-4 py-3 text-[13px] text-black/55">
           <Lock className="size-3.5" />
-          Demo: <span className="font-mono text-black/75">admin@aurelianvale.law</span> / <span className="font-mono text-black/75">admin123</span>
+          Demo: <span className="tabular-nums text-black/75">admin@aurelianvale.law</span> / <span className="tabular-nums text-black/75">admin123</span>
         </div>
         <div className="mt-6 text-center">
           <Link href="/" className="text-[13px] text-black/45 hover:text-black">← Back to website</Link>

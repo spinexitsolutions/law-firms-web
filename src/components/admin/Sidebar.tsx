@@ -56,7 +56,7 @@ function Nav({ brand, onNavigate }: { brand: string; onNavigate?: () => void }) 
   return (
     <div className="flex h-full flex-col">
       <div className="flex items-center gap-3 px-5 pb-4 pt-6">
-        <div className="grid size-9 place-items-center rounded-xl bg-[#1d1d1f] font-serif text-[17px] italic text-white">
+        <div className="grid size-9 place-items-center rounded-xl bg-[#1d1d1f] font-display text-[17px] text-white">
           {brand.slice(0, 1)}
         </div>
         <div className="min-w-0">
@@ -139,7 +139,7 @@ export function Sidebar({ brand }: { brand: string }) {
       {/* Mobile top bar */}
       <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-black/[0.06] bg-[#f5f5f7]/80 px-4 backdrop-blur-xl lg:hidden">
         <div className="flex items-center gap-2">
-          <div className="grid size-8 place-items-center rounded-lg bg-[#1d1d1f] font-serif text-[15px] italic text-white">
+          <div className="grid size-8 place-items-center rounded-lg bg-[#1d1d1f] font-display text-[15px] text-white">
             {brand.slice(0, 1)}
           </div>
           <span className="text-[15px] font-semibold tracking-tight">{brand}</span>

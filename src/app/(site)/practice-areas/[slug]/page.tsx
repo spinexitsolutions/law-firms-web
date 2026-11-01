@@ -32,13 +32,13 @@ export default async function PracticePage({ params }: Props) {
       <section className="container-x grid gap-14 py-20 md:grid-cols-12 md:py-28">
         <div className="md:col-span-7">
           <Reveal>
-            <p className="font-serif text-[clamp(1.6rem,3vw,2.4rem)] leading-[1.2] tracking-tight">{a.description}</p>
+            <p className="font-display text-[clamp(1.6rem,3vw,2.4rem)] leading-[1.2] tracking-tight">{a.description}</p>
           </Reveal>
           <h2 className="eyebrow mt-16 text-muted">What we do</h2>
           <ul className="mt-4 border-t hairline">
             {a.services.map((sv, i) => (
               <Reveal as="li" key={sv} delay={i * 0.05} className="flex items-baseline gap-6 border-b hairline py-5">
-                <span className="font-mono text-xs text-accent">{String(i + 1).padStart(2, "0")}</span>
+                <span className="tabular-nums text-xs text-accent">{String(i + 1).padStart(2, "0")}</span>
                 <span className="text-lg tracking-tight md:text-xl">{sv}</span>
               </Reveal>
             ))}
@@ -71,7 +71,7 @@ export default async function PracticePage({ params }: Props) {
       <Link href={`/practice-areas/${next.slug}`} className="group block bg-ink py-20 text-paper md:py-28" data-cursor="Next">
         <div className="container-x">
           <p className="eyebrow text-paper/50">Next practice</p>
-          <p className="display-lg mt-3 transition-all duration-700 group-hover:translate-x-4 group-hover:italic group-hover:text-accent">
+          <p className="display-lg mt-3 transition-all duration-700 group-hover:translate-x-4 group-hover:text-accent">
             {next.title} →
           </p>
         </div>

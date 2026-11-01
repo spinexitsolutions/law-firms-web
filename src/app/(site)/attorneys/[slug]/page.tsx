@@ -53,7 +53,7 @@ export default async function AttorneyPage({ params }: Props) {
             <SplitWords text={p.name} afterIntro />
           </h1>
           <Reveal>
-            <p className="mt-8 font-serif text-[clamp(1.4rem,2.4vw,2rem)] leading-snug tracking-tight">{p.bio}</p>
+            <p className="mt-8 font-display text-[clamp(1.4rem,2.4vw,2rem)] leading-snug tracking-tight">{p.bio}</p>
           </Reveal>
           <dl className="mt-14 border-t hairline">
             {lists.filter(([, v]) => v.length).map(([k, v]) => (

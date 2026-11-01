@@ -1,15 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Bricolage_Grotesque, Inter_Tight } from "next/font/google";
 import "./globals.css";
 
-const sans = Geist({ variable: "--font-geist", subsets: ["latin"] });
-const mono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
-const serif = Instrument_Serif({
-  variable: "--font-instrument",
+const display = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
+  weight: ["300", "400", "500", "600", "700"],
 });
+const sans = Inter_Tight({ variable: "--font-inter-tight", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: { default: "Aurelian Vale — Advocates & Legal Consultants", template: "%s · Aurelian Vale" },
@@ -17,14 +15,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0E0E0C",
+  themeColor: "#0C0C0E",
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${sans.variable} ${mono.variable} ${serif.variable} antialiased`}>
+    <html lang="en" className={`${display.variable} ${sans.variable} antialiased`}>
       <body>{children}</body>
     </html>
   );

@@ -116,7 +116,7 @@ export function ImageInput({ value, onChange }: { value: string; onChange: (v: s
 export function renderMarkdown(src: string) {
   return src.split(/\n{2,}/).map((block, i) =>
     block.startsWith("## ") ? (
-      <h3 key={i} className="mb-2 mt-4 font-serif text-xl">
+      <h3 key={i} className="mb-2 mt-4 font-display text-xl">
         {block.slice(3)}
       </h3>
     ) : (
@@ -150,7 +150,7 @@ function MarkdownInput({ value, onChange }: { value: string; onChange: (v: strin
         <div className="min-h-[240px] rounded-xl border border-black/10 bg-white p-4">{renderMarkdown(value)}</div>
       ) : (
         <textarea
-          className={cn(inputCls, "min-h-[240px] font-mono text-[13px] leading-relaxed")}
+          className={cn(inputCls, "min-h-[240px] tabular-nums text-[13px] leading-relaxed")}
           value={value}
           onChange={(e) => onChange(e.target.value)}
         />

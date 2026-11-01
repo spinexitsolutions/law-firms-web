@@ -27,10 +27,10 @@ export function createSeed(): DB {
         x: "https://x.com",
       },
       theme: {
-        accent: "#B38B59",
-        ink: "#0E0E0C",
-        paper: "#F3F0EA",
-        radius: 28,
+        accent: "#F2541B",
+        ink: "#0C0C0E",
+        paper: "#F1EFEA",
+        radius: 26,
         grain: true,
       },
       intro: {
@@ -59,10 +59,10 @@ export function createSeed(): DB {
         ctaHref: "/book",
       },
       hero: {
-        eyebrow: "Est. 1998 · New Delhi · Mumbai · Bengaluru",
-        titleTop: "The law, argued with",
+        eyebrow: "New Delhi · Mumbai · Bengaluru",
+        titleTop: "Law, argued with",
         rotatingWords: ["clarity", "conviction", "precision", "courage"],
-        titleBottom: "and quiet resolve.",
+        titleBottom: "& quiet resolve.",
         subtitle:
           "A full-service firm of advocates and strategic legal consultants. We advise founders, families and enterprises when the stakes are high — and the margin for error is not.",
         image: u("1505664194779-8beaceb93744", 2000),

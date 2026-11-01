@@ -27,12 +27,11 @@ export function PageHeader({
     <header ref={ref} className="relative">
       <div className="container-x pb-12 pt-32 md:pb-20 md:pt-44">
         <motion.p
-          className="eyebrow flex items-center gap-3 text-muted"
+          className="tag text-ink/70"
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: EASE }}
         >
-          <span className="h-px w-8 bg-ink/25" />
           {eyebrow}
         </motion.p>
         <h1 className="display-lg mt-5 max-w-5xl">

@@ -253,7 +253,7 @@ function ColorField({ label, value, onChange }: { label: string; value: string; 
         <label className="relative size-[46px] shrink-0 cursor-pointer overflow-hidden rounded-xl ring-1 ring-black/10" style={{ background: value }}>
           <input type="color" value={value} onChange={(e) => onChange(e.target.value)} className="absolute inset-0 cursor-pointer opacity-0" />
         </label>
-        <input className={cn(inputCls, "font-mono text-[14px] uppercase")} value={value} onChange={(e) => onChange(e.target.value)} />
+        <input className={cn(inputCls, "tabular-nums text-[14px] uppercase")} value={value} onChange={(e) => onChange(e.target.value)} />
       </div>
     </div>
   );
@@ -280,8 +280,8 @@ function IntroPreview({ intro, theme, brand }: { intro: Settings["intro"]; theme
       >
         {/* Fake "site" underneath */}
         <div className="absolute inset-0 flex flex-col justify-end p-5" style={{ color: theme.ink }}>
-          <div className="font-serif text-[28px] leading-none">The law, argued with</div>
-          <div className="font-serif text-[28px] italic leading-none" style={{ color: theme.accent }}>
+          <div className="font-display text-[28px] leading-none">The law, argued with</div>
+          <div className="font-display text-[28px] leading-none" style={{ color: theme.accent }}>
             clarity
           </div>
         </div>
@@ -299,7 +299,7 @@ function IntroPreview({ intro, theme, brand }: { intro: Settings["intro"]; theme
                 />
               ))}
               <motion.div
-                className="absolute inset-0 grid place-items-center font-serif text-2xl text-white"
+                className="absolute inset-0 grid place-items-center font-display text-2xl text-white"
                 initial={{ opacity: 0, letterSpacing: "0.4em" }}
                 animate={{ opacity: [0, 1, 1, 0], letterSpacing: ["0.4em", "0em", "0em", "0em"] }}
                 transition={{ duration: dur * 0.75, times: [0, 0.35, 0.85, 1] }}
@@ -323,7 +323,7 @@ function IntroPreview({ intro, theme, brand }: { intro: Settings["intro"]; theme
               transition={{ delay: dur * 0.7, duration: dur * 0.3, ease: [0.65, 0, 0.35, 1] }}
             >
               <motion.div
-                className="grid size-20 place-items-center rounded-full border font-serif text-3xl italic"
+                className="grid size-20 place-items-center rounded-full border font-display text-3xl"
                 style={{ borderColor: theme.accent, color: theme.accent }}
                 initial={{ scale: 0.6, opacity: 0, rotate: -20 }}
                 animate={{ scale: 1, opacity: 1, rotate: 0 }}
@@ -344,7 +344,7 @@ function IntroPreview({ intro, theme, brand }: { intro: Settings["intro"]; theme
                 {words.map((w, i) => (
                   <span key={i} className="overflow-hidden">
                     <motion.span
-                      className="inline-block font-serif text-2xl text-white"
+                      className="inline-block font-display text-2xl text-white"
                       initial={{ y: "110%" }}
                       animate={{ y: 0 }}
                       transition={{ delay: 0.1 + i * ((dur * 0.4) / words.length), duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -491,11 +491,11 @@ export function SettingsEditor({ initial }: { initial: Settings }) {
                 <Toggle label="Film grain overlay" desc="A subtle analogue texture over the whole site." checked={th.grain} onChange={(v) => patch("theme", { grain: v })} />
                 <div className="flex flex-wrap gap-2 sm:col-span-2">
                   {[
+                    ["Vermilion", "#F2541B", "#0C0C0E", "#F1EFEA"],
+                    ["Cobalt", "#2F45FF", "#0A0B14", "#F0F1F4"],
+                    ["Chartreuse", "#C6F432", "#0D0F0A", "#F2F2EC"],
+                    ["Emerald", "#14B87A", "#08110D", "#EFF2EE"],
                     ["Brass", "#B38B59", "#0E0E0C", "#F3F0EA"],
-                    ["Oxblood", "#7A2E2A", "#141210", "#F2EEE8"],
-                    ["Sage", "#5F7A5E", "#101311", "#EEF0EA"],
-                    ["Navy", "#3B5B8C", "#0B1020", "#F1F2F5"],
-                    ["Mono", "#1A1A1A", "#0A0A0A", "#F5F5F2"],
                   ].map(([n, a, i, p]) => (
                     <button
                       key={n}
@@ -514,10 +514,10 @@ export function SettingsEditor({ initial }: { initial: Settings }) {
               </Section>
               <Card className="overflow-hidden">
                 <div className="p-6 sm:p-8" style={{ background: th.paper, color: th.ink }}>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.14em]" style={{ color: th.accent }}>
+                  <div className="tabular-nums text-[11px] uppercase tracking-[0.14em]" style={{ color: th.accent }}>
                     Live preview
                   </div>
-                  <div className="mt-3 font-serif text-[40px] leading-[0.95] tracking-tight">
+                  <div className="mt-3 font-display text-[40px] leading-[0.95] tracking-tight">
                     The law, argued with <em style={{ color: th.accent }}>clarity</em>.
                   </div>
                   <div className="mt-6 flex flex-wrap gap-3">
@@ -585,7 +585,7 @@ export function SettingsEditor({ initial }: { initial: Settings }) {
                     <motion.div layout key={i} className={cn("flex flex-col gap-2 rounded-2xl border border-black/[0.07] bg-[#fbfbfd] p-3 sm:flex-row sm:items-center", !it.visible && "opacity-55")}>
                       <span className="hidden w-6 text-center text-[12px] tabular-nums text-black/35 sm:block">{i + 1}</span>
                       <input className={cn(inputCls, "sm:w-44")} value={it.label} onChange={(e) => setItem({ label: e.target.value })} placeholder="Label" />
-                      <input className={cn(inputCls, "font-mono text-[13px]")} value={it.href} onChange={(e) => setItem({ href: e.target.value })} placeholder="/path" />
+                      <input className={cn(inputCls, "tabular-nums text-[13px]")} value={it.href} onChange={(e) => setItem({ href: e.target.value })} placeholder="/path" />
                       <div className="flex shrink-0 justify-end gap-0.5">
                         <IconBtn label={it.visible ? "Hide" : "Show"} onClick={() => setItem({ visible: !it.visible })}>
                           {it.visible ? <Eye className="size-3.5" /> : <EyeOff className="size-3.5" />}
@@ -617,7 +617,7 @@ export function SettingsEditor({ initial }: { initial: Settings }) {
               <Text label="Eyebrow" value={s.hero.eyebrow} onChange={(v) => patch("hero", { eyebrow: v })} />
               <Text label="Title — first line" value={s.hero.titleTop} onChange={(v) => patch("hero", { titleTop: v })} />
               <div className="sm:col-span-2">
-                <Label help="Cycle in italic accent colour.">Rotating words</Label>
+                <Label help="Cycle in accent colour.">Rotating words</Label>
                 <TagsInput value={s.hero.rotatingWords} onChange={(v) => patch("hero", { rotatingWords: v })} />
               </div>
               <Text label="Title — last line" value={s.hero.titleBottom} onChange={(v) => patch("hero", { titleBottom: v })} />

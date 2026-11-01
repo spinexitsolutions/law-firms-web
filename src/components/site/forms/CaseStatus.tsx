@@ -53,7 +53,7 @@ export function CaseStatus() {
             value={ref}
             onChange={(e) => setRef(e.target.value)}
             placeholder="Matter reference — e.g. AV-2026-0142"
-            className={`${inputCls(true)} font-mono uppercase`}
+            className={`${inputCls(true)} tabular-nums uppercase`}
             required
           />
           <input
@@ -69,7 +69,7 @@ export function CaseStatus() {
           </button>
           {err && <p className="text-sm text-red-300">{err}</p>}
           <p className="text-xs text-paper/40">
-            Demo: <span className="font-mono">AV-2026-0142</span> · gc@meridian.example.com
+            Demo: <span className="tabular-nums">AV-2026-0142</span> · gc@meridian.example.com
           </p>
         </div>
       </form>
@@ -86,7 +86,7 @@ export function CaseStatus() {
               className="rounded-[var(--radius)] border hairline bg-white/60 p-6 md:p-8"
             >
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <span className="font-mono text-sm text-muted">{res.reference}</span>
+                <span className="tabular-nums text-sm text-muted">{res.reference}</span>
                 <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium capitalize text-emerald-800">{res.status}</span>
               </div>
               <h2 className="display-sm mt-3">{res.title}</h2>

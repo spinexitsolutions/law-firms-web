@@ -26,7 +26,7 @@ export default async function CareersPage() {
                 href={`mailto:${db.settings.brand.email}?subject=${encodeURIComponent("Application: " + j.title)}`}
                 className="group grid gap-3 py-8 md:grid-cols-12 md:items-center"
               >
-                <h3 className="font-serif text-3xl transition-transform duration-500 group-hover:translate-x-2 md:col-span-5 md:text-4xl">{j.title}</h3>
+                <h3 className="font-display text-3xl transition-transform duration-500 group-hover:translate-x-2 md:col-span-5 md:text-4xl">{j.title}</h3>
                 <p className="text-sm text-muted md:col-span-2">{j.location}</p>
                 <p className="text-sm text-muted md:col-span-2">{j.type}</p>
                 <p className="text-sm text-ink/70 md:col-span-2">{j.description}</p>

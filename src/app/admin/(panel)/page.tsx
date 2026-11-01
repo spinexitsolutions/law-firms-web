@@ -232,7 +232,7 @@ export default async function Dashboard() {
                     <div className="min-w-0">
                       <div className="truncate text-[14px] font-medium">{m.title}</div>
                       <div className="text-[12.5px] text-black/45">
-                        <span className="font-mono">{m.reference}</span> · {m.attorney}
+                        <span className="tabular-nums">{m.reference}</span> · {m.attorney}
                       </div>
                     </div>
                     {m.nextHearing && (

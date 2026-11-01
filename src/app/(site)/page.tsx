@@ -56,7 +56,7 @@ export default async function Home() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <Hero s={s} />
+      <Hero s={s} attorneys={people} areas={areas} />
       {s.sections.filter((x) => x.enabled).map((x) => (
         <div key={x.key}>{render[x.key]}</div>
       ))}

@@ -67,7 +67,7 @@ export function Footer({ s }: { s: Settings }) {
       <div className="container-x">
         <p
           aria-hidden
-          className="select-none whitespace-nowrap text-center font-serif leading-[0.8] tracking-[-0.05em] text-paper/[0.92]"
+          className="select-none whitespace-nowrap text-center font-display leading-[0.8] tracking-[-0.05em] text-paper/[0.92]"
           style={{ fontSize: `min(${Math.round(150 / Math.max(6, s.brand.name.length))}vw, 15rem)` }}
         >
           {s.brand.name}
